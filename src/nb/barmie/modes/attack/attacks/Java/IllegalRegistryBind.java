@@ -1,10 +1,6 @@
 package nb.barmie.modes.attack.attacks.Java;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.InvalidClassException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -15,8 +11,6 @@ import java.rmi.ServerException;
 import java.rmi.UnmarshalException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
-import java.util.ArrayList;
-import java.util.HashSet;
 import nb.barmie.exceptions.BaRMIeException;
 import nb.barmie.modes.attack.DeserPayload;
 import nb.barmie.modes.attack.RMIDeserAttack;

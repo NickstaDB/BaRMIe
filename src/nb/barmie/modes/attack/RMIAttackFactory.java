@@ -33,6 +33,7 @@ public class RMIAttackFactory {
 		_attacks.add(new nb.barmie.modes.attack.attacks.Axiom.ListFiles());										//AxiomSL list files
 		_attacks.add(new nb.barmie.modes.attack.attacks.Axiom.ReadFile());										//AxiomSL read file
 		_attacks.add(new nb.barmie.modes.attack.attacks.Axiom.WriteFile());										//AxiomSL write file
+		_attacks.add(new nb.barmie.modes.attack.attacks.Java.JMXDeser());										//JMX RMI deserialization attack
 	}
 	
 	/*******************

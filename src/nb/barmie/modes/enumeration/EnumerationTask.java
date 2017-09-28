@@ -2,6 +2,7 @@ package nb.barmie.modes.enumeration;
 
 import java.net.InetSocketAddress;
 import java.net.Socket;
+import java.rmi.NoSuchObjectException;
 import java.util.ArrayList;
 import java.util.Collections;
 import nb.barmie.modes.attack.DeserPayload;
@@ -143,14 +144,30 @@ public class EnumerationTask implements Runnable {
 					output += "[~] Gadgets may still be present despite CLASSPATH not being leaked\n";
 				}
 			}
+			
+			//Add exceptions to the output
+			if(ep.getEnumException() != null) {
+				output += "[-] An exception occurred during enumeration.\n";
+				output += "    " + ep.getEnumException().toString() + "\n";
+			}
 		} else if(ep.isObjectEndpoint()) {
+			//Add endpoint data to output
 			output += this._target.getHost() + ":" + this._target.getPort() + " appears to be an RMI object endpoint, rather than a registry.\n";
-		}
-		
-		//Check for enumeration exceptions and append this to the output
-		if(ep.getEnumException() != null) {
-			output += "[-] An exception occurred during enumeration.\n";
-			output += "    " + ep.getEnumException().toString() + "\n";
+			
+			//Add exception as long as it's not a NoSuchObjectException
+			if(ep.getEnumException() != null && (ep.getEnumException() instanceof NoSuchObjectException) == false) {
+				output += "[-] An exception occurred during enumeration.\n";
+				output += "    " + ep.getEnumException().toString() + "\n";
+			}
+		} else {
+			//Check for exceptions
+			if(ep.getEnumException() != null) {
+				//Check for unsupported endpoints
+				if(ep.getEnumException().toString().toLowerCase().contains("non-jrmp") || ep.getEnumException().toString().toLowerCase().contains("error during jrmp")) {
+					output += this._target.getHost() + ":" + this._target.getPort() + " is non-RMI or RMI over SSL (not currently supported).\n";
+					output += "[~] RMI over SSL support will come in a future release!\n";
+				}
+			}
 		}
 		
 		//Print the enumeration result
