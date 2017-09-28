@@ -5,7 +5,7 @@ RMI services often expose dangerous functionality without adequate security cont
 
 The goal of BaRMIe is to enable security professionals to identify, attack, and secure insecure RMI services. Using partial RMI interfaces from existing software, BaRMIe can interact directly with those services without first brute forcing 64-bits over the network.
 
-Download version 1.0 built and ready to run here: [https://github.com/NickstaDB/BaRMIe/releases/download/v1.0/BaRMIe_v1.0.jar](https://github.com/NickstaDB/BaRMIe/releases/download/v1.0/BaRMIe_v1.0.jar)
+Download the latest version build and ready to run here: [https://github.com/NickstaDB/BaRMIe/releases/latest](https://github.com/NickstaDB/BaRMIe/releases/latest)
 
 ### Disclaimer
 BaRMIe was written to aid security professionals in identifying insecure RMI services on systems which the user has prior permission to attack. Unauthorised access to computer systems is illegal and BaRMIe must be used in accordance with all relevant laws. Failure to do so could lead to you being prosecuted. The developers of BaRMIe assume no liability and are not responsible for any misuse or damage caused by this program.
