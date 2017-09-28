@@ -12,6 +12,9 @@ import nb.barmie.util.ProgramOptions;
  * v1.0
  *  -> Initial release with several attacks and
  *     deserialization payloads.
+ * v1.01
+ *  -> Added JMX deserialization payload and improved some
+ *     error handling.
  **********************************************************
  * Written by Nicky Bloor (@NickstaDB).
  **********************************************************/
@@ -33,7 +36,7 @@ public class BaRMIe {
 						   " ▒░▒   ░   ▒   ▒▒ ░  ░▒ ░ ▒░░  ░      ░ ▒ ░ ░ ░  ░\n" +
 						   "  ░    ░   ░   ▒     ░░   ░ ░      ░    ▒ ░   ░   \n" +
 						   "  ░            ░  ░   ░            ░    ░     ░  ░\n" +
-						   "       ░                                     v1.0\n" +
+						   "       ░                                     v1.01\n" +
 						   "             Java RMI enumeration tool.\n" +
 						   "               Written by Nicky Bloor (@NickstaDB)\n\n" +
 						   "Warning: BaRMIe was written to aid security professionals in identifying the\n" +
